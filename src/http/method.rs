@@ -2,9 +2,9 @@ use std::str::FromStr;
 
 #[derive(Debug)]
 pub enum Method {
-    Get,
-    Delete,
-    Post,
+    GET,
+    DELETE,
+    POST,
     PUT,
     HEAD,
     CONNECT,
@@ -18,9 +18,9 @@ impl FromStr for Method {
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
-            "GET" => Ok(Self::Get),
-            "DELETE" => Ok(Self::Delete),
-            "POST" => Ok(Self::Post),
+            "GET" => Ok(Self::GET),
+            "DELETE" => Ok(Self::DELETE),
+            "POST" => Ok(Self::POST),
             "PUT" => Ok(Self::PUT),
             "PATCH" => Ok(Self::PATCH),
             _ => Err(MethodError),
